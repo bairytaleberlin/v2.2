@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bairytale – Texte, die wirken.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&family=Alegreya+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Alegreya Sans', sans-serif;
+            background-color: #F5F5DC;
+            color: #003333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #004D4D;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 3px solid #003333;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Alegreya', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #D4AF37;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: #F5F5DC;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+        }
+        
+        .nav-link:hover {
+            color: #D4AF37;
+            border-color: #D4AF37;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background-color: #F5F5DC;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Alegreya', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: #003333;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+        
+        .highlight {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 10px 20px;
+            display: inline-block;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #7A7A7A;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #D4AF37;
+            color: #003333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
+        }
+        
+        .btn:hover {
+            background-color: #FF6B6B;
+            color: white;
+            box-shadow: 12px 12px 0px #003333;
+        }
+        
+        .profile-image {
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(135deg, #D4AF37, #FF6B6B);
+            border: 4px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .profile-placeholder {
+            text-align: center;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .profile-placeholder::before {
+            content: '📸';
+            display: block;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-dark {
+            background-color: #004D4D;
+            color: #F5F5DC;
+        }
+        
+        .section h2 {
+            font-family: 'Alegreya', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section-dark h2 {
+            color: #F5F5DC;
+        }
+        
+        .section p {
+            font-size: 18px;
+            color: #7A7A7A;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #FF6B6B, #D4AF37);
+            border: 4px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            background-color: #F5F5DC;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
+            padding: 40px;
+        }
+        
+        .service-card h3 {
+            font-family: 'Alegreya', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #003333;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #7A7A7A;
+            text-align: left;
+            margin: 0;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 40px;
+            border: 3px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-family: 'Alegreya', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box p {
+            color: #003333;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        
+        /* Features List */
+        .features-list {
+            list-style: none;
+            margin-top: 30px;
+            display: grid;
+            gap: 15px;
+        }
+        
+        .features-list li {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 15px 25px;
+            border: 2px solid #003333;
+            box-shadow: 4px 4px 0px #003333;
+            font-weight: 700;
+        }
+        
+        .features-list li:nth-child(even) {
+            background-color: #FF6B6B;
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background-color: #004D4D;
+            color: #F5F5DC;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: #F5F5DC;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            color: #7A7A7A;
+            margin-bottom: 30px;
+        }
+        
+        .cta .btn {
+            background-color: #D4AF37;
+            color: #003333;
+            font-size: 20px;
+            padding: 25px 50px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #003333;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            color: #D4AF37;
+            font-family: 'Alegreya', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #7A7A7A;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-section a:hover {
+            color: #D4AF37;
+        }
+        
+        .footer-bottom {
+            border-top: 2px solid #7A7A7A;
+            padding-top: 20px;
+            text-align: center;
+            color: #7A7A7A;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                width: 250px;
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Bairytale</a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">Dienstleistungen</a></li>
+                    <li><a href="#" class="nav-link">Portfolio</a></li>
+                    <li><a href="#" class="nav-link">Blog</a></li>
+                    <li><a href="#" class="nav-link">Über mich</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Texte, <span class="highlight">die knallen</span> statt klimpern.</h1>
+                    <p class="hero-subtitle">Vielseitigkeit trifft Vision, Chaos küsst Struktur. Hier entstehen Texte, die verkaufen, bewegen oder komplett entgleisen dürfen – je nachdem, was gebraucht wird.</p>
+                    <a href="#services" class="btn">Lass uns dein Projekt besprechen</a>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <div class="profile-placeholder">
+                            Profilbild<br>Platzhalter
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Ich bin kein Texter von der Stange.</h2>
+                    <p>Zwischen Shakespeare und Straßenwitz: Ich finde den Ton, der trifft.</p>
+                    <p>Ich schreibe, wie Menschen sprechen – mit Haltung, Herz und einem feinen Ohr für Zwischentöne. Keine Floskeln, kein Buzzword-Bingo. Sondern Texte, die klingen wie echte Gespräche – und genau da andocken, wo sie gehört werden sollen.</p>
+                    <a href="#" class="btn">Mehr über mich</a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-dark">
+        <div class="container">
+            <h2>Was ich schreibe?</h2>
+            <p>Texte, die verkaufen. Geschichten, die berühren. Songs, die hängen bleiben.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Copywriting</h3>
+                    <p>Webtexte, Produkttexte, Headlines & Claims – kurz, knackig, klar. Ohne Buzzword-Bullshit.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Storytelling</h3>
+                    <p>Gute Geschichten verkaufen. Ich verpass deiner Marke ne Handlung – mit Gefühl, Haltung & Hook.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ghostwriting</h3>
+                    <p>Du hast 'ne Story – ich hab das Sprachrohr. Biografie, Rede oder Roman: Du klingst, ich schreibe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI vs Human Section -->
+    <section class="section">
+        <div class="container">
+            <div class="highlight-box">
+                <h3>KI vs. Mensch</h3>
+                <p>KI-Tools sind praktisch. Schnell. Berechenbar. Aber genau das ist das Problem: Sie schreiben, was erwartet wird. Ich schreibe, was gebraucht wird.</p>
+                <p>Ich höre zu, lese zwischen den Zeilen und stelle die Fragen, die deine Zielgruppe nicht mal weiß, dass sie sie stellt. Und während eine KI dir einen Text baut – baue ich Verbindung, Relevanz und Wirkung.</p>
+                <p style="font-weight: 700; font-size: 20px;">Wenn du willst, dass dein Text klingt wie alle anderen, go AI. Wenn du willst, dass er nach dir klingt – welcome to Bairytale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2>Texte, die treffen. In jeder Disziplin.</h2>
+            <p>Ganz gleich, ob Website, Kampagne oder Case Study – ich finde den richtigen Ton für jedes Format. Punktgenau, markengerecht und mit einem Blick fürs Wesentliche. Mal laut, mal leise, aber nie beliebig.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Kreativ mit Köpfchen</h3>
+                    <p>Texte, die verkaufen. Geschichten, die berühren. Songs, die hängen bleiben.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Text mit Haltung</h3>
+                    <p>Ich schleim nicht. Ich treff. Direkt ins Herz, Hirn – oder Humorzentrum.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nix von der Stange</h3>
+                    <p>Jeder Text ist Maßarbeit. Kein Copy-Paste, sondern Copy mit Charakter.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Songtexte</h3>
+                    <p>Von Lovesong bis Protesthymne: Ich schreib dir Lyrics, die hängenbleiben – Wort für Wort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Warum Bairytale?</h2>
+                    <p>Zwischen Shakespeare und Straßenwitz: Ich finde den Ton, der trifft. Ich schreibe, wie Menschen sprechen – mit Haltung, Herz und einem feinen Ohr für Zwischentöne.</p>
+                    
+                    <ul class="features-list">
+                        <li>Texte mit Persönlichkeit</li>
+                        <li>Ideen, die weiterdenken</li>
+                        <li>Loyalität, auf die du zählen kannst</li>
+                        <li>Struktur im kreativen Chaos</li>
+                    </ul>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2>Bereit für Texte mit Wumms?</h2>
+            <p>Du hast eine Idee, ein Projekt oder einfach keinen Bock mehr auf mittelmäßige Texte? Dann ist jetzt der Moment, an dem du mir schreibst.</p>
+            <p style="font-style: italic; margin-bottom: 40px;">P.S.: Wenn du denkst, dein Projekt ist zu wild, zu speziell oder zu schräg – dann erst recht.</p>
+            <a href="#" class="btn">Jetzt Projekt starten</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Bairytale</h4>
+                    <p style="color: #7A7A7A; font-size: 14px;">Texte, die wirken. Zwischen Shakespeare und Straßenwitz.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#">Dienstleistungen</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Über mich</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">X-Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bairytale – Texte, die wirken. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
