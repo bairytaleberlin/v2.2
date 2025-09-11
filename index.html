@@ -4,837 +4,387 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bairytale – Texte, die wirken.</title>
-    <meta name="description" content="Texte, die knallen statt klimpern. Vielseitigkeit trifft Vision, Chaos küsst Struktur. Hier entstehen Texte, die verkaufen, bewegen oder komplett entgleisen dürfen.">
     <style>
-        /* Bairytale Neo-Brutalist Design System - Enhanced Version */
-
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,500;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-        /* CSS Variables - Design System */
-        :root {
-          /* Colors */
-          --primary: #004D4D;
-          --secondary: #F5F5DC;
-          --text: #7A7A7A;
-          --dark-petrol: #003333;
-          --accent: #D4AF37;
-          --accent-2: #FF6B6B;
-          --white: #FFFFFF;
-          --black: #000000;
-          
-          /* Typography */
-          --font-serif: 'Alegreya', serif;
-          --font-sans: 'Alegreya Sans', sans-serif;
-          --font-mono: 'JetBrains Mono', monospace;
-          
-          /* Spacing */
-          --space-xs: 8px;
-          --space-sm: 16px;
-          --space-md: 24px;
-          --space-lg: 32px;
-          --space-xl: 48px;
-          --space-2xl: 64px;
-          --space-3xl: 96px;
-          
-          /* Shadows */
-          --shadow-sm: 4px 4px 0px var(--dark-petrol);
-          --shadow-md: 8px 8px 0px var(--dark-petrol);
-          --shadow-lg: 12px 12px 0px var(--dark-petrol);
-          --shadow-xl: 16px 16px 0px var(--dark-petrol);
-          
-          /* Borders */
-          --border-sm: 2px solid var(--dark-petrol);
-          --border-md: 3px solid var(--dark-petrol);
-          --border-lg: 4px solid var(--dark-petrol);
-          
-          /* Transitions */
-          --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Reset & Base Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&family=Alegreya+Sans:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        html {
-          font-size: 16px;
-          scroll-behavior: smooth;
-        }
-
+        
         body {
-          font-family: var(--font-sans);
-          background-color: var(--secondary);
-          color: var(--dark-petrol);
-          line-height: 1.6;
-          overflow-x: hidden;
+            font-family: 'Alegreya Sans', sans-serif;
+            background-color: #F5F5DC;
+            color: #003333;
+            line-height: 1.6;
         }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-          font-family: var(--font-serif);
-          font-weight: 900;
-          line-height: 1.1;
-          margin-bottom: var(--space-md);
-        }
-
-        h1 {
-          font-size: clamp(3rem, 8vw, 8rem);
-          color: var(--dark-petrol);
-          text-transform: none;
-          letter-spacing: -0.02em;
-          font-weight: 900;
-        }
-
-        h2 {
-          font-size: clamp(2.5rem, 6vw, 6rem);
-          color: var(--dark-petrol);
-          font-weight: 900;
-        }
-
-        h3 {
-          font-size: clamp(1.8rem, 4vw, 3rem);
-          font-family: var(--font-serif);
-          color: var(--dark-petrol);
-          font-weight: 700;
-        }
-
-        h4 {
-          font-size: clamp(1.25rem, 2vw, 1.5rem);
-          font-family: var(--font-sans);
-          font-weight: 700;
-          color: var(--dark-petrol);
-        }
-
-        p {
-          font-size: clamp(1rem, 1.5vw, 1.25rem);
-          color: var(--text);
-          margin-bottom: var(--space-md);
-          max-width: 65ch;
-        }
-
-        /* Links */
-        a {
-          color: var(--accent);
-          text-decoration: none;
-          transition: all var(--transition-fast);
-        }
-
-        a:hover {
-          color: var(--accent-2);
-          text-decoration: underline;
-        }
-
-        /* Buttons */
-        .btn {
-          display: inline-block;
-          padding: var(--space-md) var(--space-xl);
-          font-family: var(--font-sans);
-          font-size: 1.125rem;
-          font-weight: 700;
-          border: var(--border-lg);
-          background-color: var(--accent);
-          color: var(--dark-petrol);
-          cursor: pointer;
-          transition: all var(--transition-fast);
-          box-shadow: var(--shadow-lg);
-          text-decoration: none;
-          transform: rotate(-1deg);
-          position: relative;
-        }
-
-        .btn:hover {
-          background-color: var(--accent-2);
-          color: var(--white);
-          box-shadow: var(--shadow-xl);
-          transform: rotate(1deg) translate(-2px, -2px);
-          text-decoration: none;
-        }
-
-        .btn-secondary {
-          background-color: var(--primary);
-          color: var(--secondary);
-          border-color: var(--primary);
-          transform: rotate(1deg);
-        }
-
-        .btn-secondary:hover {
-          background-color: var(--accent);
-          color: var(--dark-petrol);
-          transform: rotate(-1deg) translate(-2px, -2px);
-        }
-
-        .btn-large {
-          padding: var(--space-lg) var(--space-2xl);
-          font-size: 1.25rem;
-        }
-
-        /* Diagonal Lines */
-        .diagonal-line {
-          position: absolute;
-          height: 4px;
-          background-color: var(--accent);
-          transform-origin: left center;
-        }
-
-        .diagonal-line-left {
-          top: 20%;
-          left: 10%;
-          width: 200px;
-          transform: rotate(-15deg);
-        }
-
-        .diagonal-line-right {
-          top: 20%;
-          right: 10%;
-          width: 200px;
-          transform: rotate(15deg);
-        }
-
-        /* Layout */
+        
         .container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 var(--space-md);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .section {
-          padding: var(--space-3xl) 0;
-          position: relative;
-        }
-
-        .section-dark {
-          background-color: var(--primary);
-          color: var(--secondary);
-        }
-
-        .section-dark h1,
-        .section-dark h2,
-        .section-dark h3 {
-          color: var(--secondary);
-        }
-
-        .section-dark p {
-          color: var(--text);
-        }
-
-        /* Header & Navigation */
+        
+        /* Header */
         .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          background-color: var(--primary);
-          border-bottom: var(--border-md);
-          z-index: 1000;
-          padding: var(--space-sm) 0;
+            background-color: #004D4D;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 3px solid #003333;
         }
-
+        
         .nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
+        
         .logo {
-          font-family: var(--font-serif);
-          font-size: 1.8rem;
-          font-weight: 900;
-          color: var(--accent);
-          text-decoration: none;
-          text-transform: uppercase;
-          transform: rotate(-2deg);
+            font-family: 'Alegreya', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #D4AF37;
+            text-decoration: none;
+            text-transform: uppercase;
         }
-
+        
         .nav-menu {
-          display: flex;
-          list-style: none;
-          gap: var(--space-lg);
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
-
+        
         .nav-link {
-          font-family: var(--font-sans);
-          font-size: 1rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          color: var(--secondary);
-          text-decoration: none;
-          transition: all var(--transition-fast);
-          position: relative;
-          padding: var(--space-xs) var(--space-sm);
-          border: 2px solid transparent;
+            color: #F5F5DC;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 2px solid transparent;
         }
-
+        
         .nav-link:hover {
-          color: var(--accent);
-          border-color: var(--accent);
-          transform: rotate(-1deg);
+            color: #D4AF37;
+            border-color: #D4AF37;
         }
-
-        /* Mobile Menu */
-        .menu-toggle {
-          display: none;
-          background: none;
-          border: var(--border-sm);
-          color: var(--secondary);
-          font-size: 1.5rem;
-          cursor: pointer;
-          padding: var(--space-xs);
-        }
-
+        
         /* Hero Section */
         .hero {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          padding-top: 100px;
-          position: relative;
-          overflow: hidden;
-          background-color: var(--secondary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background-color: #F5F5DC;
         }
-
-        .hero::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, transparent 0%, var(--primary) 100%);
-          opacity: 0.05;
-          z-index: 1;
-        }
-
+        
         .hero-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: var(--space-3xl);
-          align-items: center;
-          position: relative;
-          z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
-
-        .hero-text {
-          position: relative;
-        }
-
+        
         .hero-text h1 {
-          margin-bottom: var(--space-lg);
-          position: relative;
+            font-family: 'Alegreya', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: #003333;
+            margin-bottom: 30px;
+            line-height: 1.1;
         }
-
-        .hero-text .highlight {
-          background-color: var(--accent);
-          color: var(--dark-petrol);
-          padding: var(--space-sm) var(--space-md);
-          transform: rotate(-1deg);
-          display: inline-block;
-          margin: var(--space-sm) 0;
-          border: var(--border-md);
-          box-shadow: var(--shadow-md);
+        
+        .highlight {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 10px 20px;
+            display: inline-block;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
         }
-
+        
         .hero-subtitle {
-          font-size: clamp(1.125rem, 2vw, 1.5rem);
-          color: var(--text);
-          margin-bottom: var(--space-xl);
-          max-width: none;
-          line-height: 1.6;
+            font-size: 20px;
+            color: #7A7A7A;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
-
-        .hero-image {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        
+        .btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #D4AF37;
+            color: #003333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
         }
-
-        .profile-image-placeholder {
-          width: 350px;
-          height: 450px;
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
-          border: var(--border-lg);
-          box-shadow: var(--shadow-xl);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.25rem;
-          color: var(--white);
-          transform: rotate(-3deg);
-          position: relative;
-          font-family: var(--font-mono);
-          text-transform: uppercase;
-          font-weight: 700;
+        
+        .btn:hover {
+            background-color: #FF6B6B;
+            color: white;
+            box-shadow: 12px 12px 0px #003333;
         }
-
-        .profile-image-placeholder::before {
-          content: '📸';
-          font-size: 4rem;
-          margin-bottom: var(--space-md);
+        
+        .profile-image {
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(135deg, #D4AF37, #FF6B6B);
+            border: 4px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
         }
-
-        .profile-image-placeholder::after {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          right: -10px;
-          bottom: -10px;
-          border: 2px solid var(--accent);
-          transform: rotate(6deg);
-          z-index: -1;
+        
+        .profile-placeholder {
+            text-align: center;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
         }
-
-        /* Highlight Boxes */
-        .highlight-box {
-          background-color: var(--accent);
-          color: var(--dark-petrol);
-          padding: var(--space-xl);
-          border: var(--border-lg);
-          box-shadow: var(--shadow-lg);
-          transform: rotate(-2deg);
-          margin: var(--space-xl) 0;
-          position: relative;
+        
+        .profile-placeholder::before {
+            content: '📸';
+            display: block;
+            font-size: 60px;
+            margin-bottom: 20px;
         }
-
-        .highlight-box::before {
-          content: '';
-          position: absolute;
-          top: -8px;
-          left: -8px;
-          right: -8px;
-          bottom: -8px;
-          border: var(--border-md);
-          border-color: var(--dark-petrol);
-          transform: rotate(4deg);
-          z-index: -1;
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
         }
-
-        .highlight-box h3 {
-          color: var(--dark-petrol);
-          margin-bottom: var(--space-md);
+        
+        .section-dark {
+            background-color: #004D4D;
+            color: #F5F5DC;
         }
-
-        .highlight-box p {
-          color: var(--dark-petrol);
-          font-weight: 600;
+        
+        .section h2 {
+            font-family: 'Alegreya', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
         }
-
-        /* Services Section */
-        .services {
-          background-color: var(--primary);
-          position: relative;
-          color: var(--secondary);
+        
+        .section-dark h2 {
+            color: #F5F5DC;
         }
-
-        .services::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 8px;
-          background: repeating-linear-gradient(
-            90deg,
-            var(--accent) 0px,
-            var(--accent) 20px,
-            var(--accent-2) 20px,
-            var(--accent-2) 40px
-          );
+        
+        .section p {
+            font-size: 18px;
+            color: #7A7A7A;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
-
-        .services h2,
-        .services h3 {
-          color: var(--secondary);
-        }
-
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: var(--space-xl);
-          margin-top: var(--space-2xl);
-        }
-
-        .service-card {
-          background-color: var(--secondary);
-          border: var(--border-lg);
-          box-shadow: var(--shadow-lg);
-          padding: var(--space-xl);
-          position: relative;
-          transition: all var(--transition-normal);
-          transform: rotate(-1deg);
-        }
-
-        .service-card:nth-child(even) {
-          transform: rotate(1deg);
-        }
-
-        .service-card:hover {
-          box-shadow: var(--shadow-xl);
-          transform: rotate(-3deg) translate(-4px, -4px);
-        }
-
-        .service-card:nth-child(even):hover {
-          transform: rotate(3deg) translate(-4px, -4px);
-        }
-
-        .service-card::before {
-          content: '';
-          position: absolute;
-          top: var(--space-sm);
-          right: var(--space-sm);
-          width: 30px;
-          height: 30px;
-          background-color: var(--accent);
-          border: var(--border-sm);
-          transform: rotate(45deg);
-        }
-
-        .service-card h3 {
-          color: var(--dark-petrol);
-          font-family: var(--font-serif);
-          font-size: 1.5rem;
-          margin-bottom: var(--space-sm);
-          font-weight: 700;
-        }
-
-        .service-card p {
-          color: var(--text);
-          font-size: 1rem;
-        }
-
+        
         /* About Section */
-        .about {
-          background: var(--secondary);
-          position: relative;
-        }
-
         .about-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: var(--space-3xl);
-          align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
-
-        .about-text {
-          position: relative;
+        
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
         }
-
-        .about-text::before {
-          content: '"';
-          position: absolute;
-          top: -40px;
-          left: -60px;
-          font-size: 12rem;
-          color: var(--accent);
-          opacity: 0.2;
-          font-family: var(--font-serif);
-          line-height: 1;
-          transform: rotate(-15deg);
+        
+        .about-text p {
+            text-align: left;
+            margin-bottom: 20px;
         }
-
-        .about-features {
-          list-style: none;
-          margin-top: var(--space-lg);
-          display: grid;
-          gap: var(--space-md);
-        }
-
-        .about-features li {
-          font-family: var(--font-sans);
-          font-size: 1rem;
-          color: var(--dark-petrol);
-          font-weight: 700;
-          position: relative;
-          padding: var(--space-sm) var(--space-md);
-          background-color: var(--accent);
-          border: var(--border-sm);
-          transform: rotate(-1deg);
-          box-shadow: var(--shadow-sm);
-        }
-
-        .about-features li:nth-child(even) {
-          transform: rotate(1deg);
-          background-color: var(--accent-2);
-          color: var(--white);
-        }
-
-        .about-features li::before {
-          content: '▶';
-          position: absolute;
-          left: var(--space-xs);
-          color: var(--dark-petrol);
-        }
-
-        .about-features li:nth-child(even)::before {
-          color: var(--white);
-        }
-
+        
         .about-image {
-          position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #FF6B6B, #D4AF37);
+            border: 4px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
         }
-
-        .glitch-box {
-          width: 100%;
-          height: 400px;
-          background: linear-gradient(45deg, var(--accent-2), var(--accent));
-          border: var(--border-lg);
-          box-shadow: var(--shadow-xl);
-          position: relative;
-          overflow: hidden;
-          transform: rotate(2deg);
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
-
-        .glitch-box::before,
-        .glitch-box::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(45deg, transparent 30%, var(--primary) 31%, var(--primary) 33%, transparent 34%);
-          animation: glitch 4s infinite;
+        
+        .service-card {
+            background-color: #F5F5DC;
+            border: 3px solid #003333;
+            box-shadow: 8px 8px 0px #003333;
+            padding: 40px;
         }
-
-        .glitch-box::after {
-          animation-delay: 2s;
-          background: linear-gradient(-45deg, transparent 30%, var(--dark-petrol) 31%, var(--dark-petrol) 33%, transparent 34%);
+        
+        .service-card h3 {
+            font-family: 'Alegreya', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #003333;
+            margin-bottom: 15px;
         }
-
-        @keyframes glitch {
-          0%, 90%, 100% { opacity: 0; }
-          95% { opacity: 0.8; }
+        
+        .service-card p {
+            color: #7A7A7A;
+            text-align: left;
+            margin: 0;
         }
-
+        
+        /* Highlight Box */
+        .highlight-box {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 40px;
+            border: 3px solid #003333;
+            box-shadow: 12px 12px 0px #003333;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-family: 'Alegreya', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box p {
+            color: #003333;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        
+        /* Features List */
+        .features-list {
+            list-style: none;
+            margin-top: 30px;
+            display: grid;
+            gap: 15px;
+        }
+        
+        .features-list li {
+            background-color: #D4AF37;
+            color: #003333;
+            padding: 15px 25px;
+            border: 2px solid #003333;
+            box-shadow: 4px 4px 0px #003333;
+            font-weight: 700;
+        }
+        
+        .features-list li:nth-child(even) {
+            background-color: #FF6B6B;
+            color: white;
+        }
+        
         /* CTA Section */
         .cta {
-          background-color: var(--primary);
-          color: var(--secondary);
-          text-align: center;
-          position: relative;
+            background-color: #004D4D;
+            color: #F5F5DC;
+            text-align: center;
         }
-
-        .cta::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 8px;
-          background: repeating-linear-gradient(
-            90deg,
-            var(--accent) 0px,
-            var(--accent) 30px,
-            var(--accent-2) 30px,
-            var(--accent-2) 60px
-          );
-        }
-
+        
         .cta h2 {
-          color: var(--secondary);
-          margin-bottom: var(--space-md);
-          transform: rotate(-1deg);
-          display: inline-block;
+            color: #F5F5DC;
+            margin-bottom: 20px;
         }
-
+        
         .cta p {
-          color: var(--text);
-          margin: 0 auto var(--space-xl);
-          max-width: 60ch;
+            color: #7A7A7A;
+            margin-bottom: 30px;
         }
-
+        
         .cta .btn {
-          background-color: var(--accent);
-          color: var(--dark-petrol);
-          border-color: var(--accent);
-          font-size: 1.25rem;
-          padding: var(--space-lg) var(--space-2xl);
-          transform: rotate(2deg);
+            background-color: #D4AF37;
+            color: #003333;
+            font-size: 20px;
+            padding: 25px 50px;
         }
-
-        .cta .btn:hover {
-          background-color: var(--accent-2);
-          color: var(--white);
-          border-color: var(--accent-2);
-          transform: rotate(-2deg) translate(-4px, -4px);
-        }
-
+        
         /* Footer */
         .footer {
-          background-color: var(--dark-petrol);
-          border-top: var(--border-md);
-          padding: var(--space-2xl) 0 var(--space-lg);
-          position: relative;
+            background-color: #003333;
+            padding: 60px 0 30px;
         }
-
-        .footer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
-        }
-
+        
         .footer-content {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: var(--space-xl);
-          margin-bottom: var(--space-lg);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
         }
-
+        
         .footer-section h4 {
-          font-family: var(--font-serif);
-          text-transform: uppercase;
-          color: var(--accent);
-          margin-bottom: var(--space-md);
-          font-size: 1.125rem;
-          font-weight: 700;
-          transform: rotate(-1deg);
-          display: inline-block;
+            color: #D4AF37;
+            font-family: 'Alegreya', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
-
+        
         .footer-section ul {
-          list-style: none;
+            list-style: none;
         }
-
+        
         .footer-section li {
-          margin-bottom: var(--space-sm);
+            margin-bottom: 10px;
         }
-
+        
         .footer-section a {
-          color: var(--text);
-          font-size: 0.875rem;
-          transition: color var(--transition-fast);
-          display: inline-block;
+            color: #7A7A7A;
+            text-decoration: none;
+            font-size: 14px;
         }
-
+        
         .footer-section a:hover {
-          color: var(--accent);
-          transform: rotate(-1deg);
+            color: #D4AF37;
         }
-
+        
         .footer-bottom {
-          border-top: 2px solid var(--text);
-          padding-top: var(--space-md);
-          text-align: center;
-          color: var(--text);
-          font-size: 0.875rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-          .nav-menu {
-            display: none;
-          }
-          
-          .menu-toggle {
-            display: block;
-          }
-          
-          .hero-content {
-            grid-template-columns: 1fr;
+            border-top: 2px solid #7A7A7A;
+            padding-top: 20px;
             text-align: center;
-          }
-          
-          .about-content {
-            grid-template-columns: 1fr;
-          }
-          
-          .services-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .profile-image-placeholder {
-            width: 250px;
-            height: 320px;
-            font-size: 1rem;
-          }
-          
-          .container {
-            padding: 0 var(--space-sm);
-          }
-          
-          .section {
-            padding: var(--space-2xl) 0;
-          }
-          
-          h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-          }
-          
-          h2 {
-            font-size: clamp(2rem, 6vw, 3rem);
-          }
-          
-          .diagonal-line {
-            display: none;
-          }
+            color: #7A7A7A;
+            font-size: 14px;
         }
-
-        @media (max-width: 480px) {
-          .hero {
-            min-height: 80vh;
-          }
-          
-          .profile-image-placeholder {
-            width: 200px;
-            height: 260px;
-            font-size: 0.875rem;
-          }
-          
-          .btn {
-            padding: var(--space-sm) var(--space-lg);
-            font-size: 1rem;
-          }
-          
-          .highlight-box {
-            padding: var(--space-md);
-          }
-        }
-
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-
-        .mb-sm { margin-bottom: var(--space-sm); }
-        .mb-md { margin-bottom: var(--space-md); }
-        .mb-lg { margin-bottom: var(--space-lg); }
-        .mb-xl { margin-bottom: var(--space-xl); }
-
-        .mt-sm { margin-top: var(--space-sm); }
-        .mt-md { margin-top: var(--space-md); }
-        .mt-lg { margin-top: var(--space-lg); }
-        .mt-xl { margin-top: var(--space-xl); }
-
-        .hidden { display: none; }
-        .visible { display: block; }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            transform: none !important;
-          }
-        }
-
-        /* Focus States */
-        *:focus {
-          outline: 3px solid var(--accent);
-          outline-offset: 2px;
-        }
-
-        .btn:focus {
-          outline-color: var(--accent-2);
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                width: 250px;
+                height: 320px;
+            }
         }
     </style>
 </head>
@@ -843,32 +393,31 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="index.html" class="logo">Bairytale</a>
+                <a href="#" class="logo">Bairytale</a>
                 <ul class="nav-menu">
-                    <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="ueber-mich.html" class="nav-link">Über mich</a></li>
+                    <li><a href="#" class="nav-link">Dienstleistungen</a></li>
+                    <li><a href="#" class="nav-link">Portfolio</a></li>
+                    <li><a href="#" class="nav-link">Blog</a></li>
+                    <li><a href="#" class="nav-link">Über mich</a></li>
                 </ul>
-                <button class="menu-toggle" aria-label="Menu öffnen">☰</button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="diagonal-line diagonal-line-left"></div>
-        <div class="diagonal-line diagonal-line-right"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Texte, <span class="highlight">die knallen</span> statt klimpern.</h1>
                     <p class="hero-subtitle">Vielseitigkeit trifft Vision, Chaos küsst Struktur. Hier entstehen Texte, die verkaufen, bewegen oder komplett entgleisen dürfen – je nachdem, was gebraucht wird.</p>
-                    <a href="#services" class="btn btn-large">Lass uns dein Projekt besprechen</a>
+                    <a href="#services" class="btn">Lass uns dein Projekt besprechen</a>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-image-placeholder">
-                        Profilbild<br>Platzhalter
+                    <div class="profile-image">
+                        <div class="profile-placeholder">
+                            Profilbild<br>Platzhalter
+                        </div>
                     </div>
                 </div>
             </div>
@@ -883,20 +432,18 @@
                     <h2>Ich bin kein Texter von der Stange.</h2>
                     <p>Zwischen Shakespeare und Straßenwitz: Ich finde den Ton, der trifft.</p>
                     <p>Ich schreibe, wie Menschen sprechen – mit Haltung, Herz und einem feinen Ohr für Zwischentöne. Keine Floskeln, kein Buzzword-Bingo. Sondern Texte, die klingen wie echte Gespräche – und genau da andocken, wo sie gehört werden sollen.</p>
-                    <a href="ueber-mich.html" class="btn">Mehr über mich</a>
+                    <a href="#" class="btn">Mehr über mich</a>
                 </div>
-                <div class="about-image">
-                    <div class="glitch-box"></div>
-                </div>
+                <div class="about-image"></div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section section-dark services">
+    <section id="services" class="section section-dark">
         <div class="container">
-            <h2 class="text-center">Was ich schreibe?</h2>
-            <p class="text-center" style="max-width: 70ch; margin: 0 auto var(--space-xl); color: var(--text);">Texte, die verkaufen. Geschichten, die berühren. Songs, die hängen bleiben.</p>
+            <h2>Was ich schreibe?</h2>
+            <p>Texte, die verkaufen. Geschichten, die berühren. Songs, die hängen bleiben.</p>
             
             <div class="services-grid">
                 <div class="service-card">
@@ -922,16 +469,16 @@
                 <h3>KI vs. Mensch</h3>
                 <p>KI-Tools sind praktisch. Schnell. Berechenbar. Aber genau das ist das Problem: Sie schreiben, was erwartet wird. Ich schreibe, was gebraucht wird.</p>
                 <p>Ich höre zu, lese zwischen den Zeilen und stelle die Fragen, die deine Zielgruppe nicht mal weiß, dass sie sie stellt. Und während eine KI dir einen Text baut – baue ich Verbindung, Relevanz und Wirkung.</p>
-                <p style="font-weight: 700; font-size: 1.125rem;">Wenn du willst, dass dein Text klingt wie alle anderen, go AI. Wenn du willst, dass er nach dir klingt – welcome to Bairytale.</p>
+                <p style="font-weight: 700; font-size: 20px;">Wenn du willst, dass dein Text klingt wie alle anderen, go AI. Wenn du willst, dass er nach dir klingt – welcome to Bairytale.</p>
             </div>
         </div>
     </section>
 
     <!-- Services Detail Section -->
-    <section class="section section-dark services">
+    <section class="section section-dark">
         <div class="container">
-            <h2 class="text-center mb-xl">Texte, die treffen. In jeder Disziplin.</h2>
-            <p class="text-center" style="max-width: 80ch; margin: 0 auto var(--space-xl); color: var(--text);">Ganz gleich, ob Website, Kampagne oder Case Study – ich finde den richtigen Ton für jedes Format. Punktgenau, markengerecht und mit einem Blick fürs Wesentliche. Mal laut, mal leise, aber nie beliebig.</p>
+            <h2>Texte, die treffen. In jeder Disziplin.</h2>
+            <p>Ganz gleich, ob Website, Kampagne oder Case Study – ich finde den richtigen Ton für jedes Format. Punktgenau, markengerecht und mit einem Blick fürs Wesentliche. Mal laut, mal leise, aber nie beliebig.</p>
             
             <div class="services-grid">
                 <div class="service-card">
@@ -962,16 +509,14 @@
                     <h2>Warum Bairytale?</h2>
                     <p>Zwischen Shakespeare und Straßenwitz: Ich finde den Ton, der trifft. Ich schreibe, wie Menschen sprechen – mit Haltung, Herz und einem feinen Ohr für Zwischentöne.</p>
                     
-                    <ul class="about-features">
+                    <ul class="features-list">
                         <li>Texte mit Persönlichkeit</li>
                         <li>Ideen, die weiterdenken</li>
                         <li>Loyalität, auf die du zählen kannst</li>
                         <li>Struktur im kreativen Chaos</li>
                     </ul>
                 </div>
-                <div class="about-image">
-                    <div class="glitch-box"></div>
-                </div>
+                <div class="about-image"></div>
             </div>
         </div>
     </section>
@@ -981,8 +526,8 @@
         <div class="container">
             <h2>Bereit für Texte mit Wumms?</h2>
             <p>Du hast eine Idee, ein Projekt oder einfach keinen Bock mehr auf mittelmäßige Texte? Dann ist jetzt der Moment, an dem du mir schreibst.</p>
-            <p style="font-style: italic; margin-bottom: var(--space-xl); color: var(--text);">P.S.: Wenn du denkst, dein Projekt ist zu wild, zu speziell oder zu schräg – dann erst recht.</p>
-            <a href="ueber-mich.html#contact" class="btn btn-large">Jetzt Projekt starten</a>
+            <p style="font-style: italic; margin-bottom: 40px;">P.S.: Wenn du denkst, dein Projekt ist zu wild, zu speziell oder zu schräg – dann erst recht.</p>
+            <a href="#" class="btn">Jetzt Projekt starten</a>
         </div>
     </section>
 
@@ -992,30 +537,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Bairytale</h4>
-                    <p style="color: var(--text); font-size: 0.875rem;">Texte, die wirken. Zwischen Shakespeare und Straßenwitz.</p>
+                    <p style="color: #7A7A7A; font-size: 14px;">Texte, die wirken. Zwischen Shakespeare und Straßenwitz.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="#">Dienstleistungen</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Über mich</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Social Media</h4>
                     <ul>
-                        <li><a href="#" target="_blank">Facebook</a></li>
-                        <li><a href="#" target="_blank">X-Twitter</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">X-Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
                     </ul>
                 </div>
             </div>
