@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Bairytale</title>
+    <meta name="description" content="Blog | Gedanken, die treffen - Klartext, Know-How und Kante. Artikel über Bildung, Sprache und Kommunikation.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-filters {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: var(--space-xs) var(--space-sm);
+            border: var(--border-sm);
+            background-color: transparent;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+        
+        .blog-post {
+            background-color: var(--secondary);
+            border: var(--border-md);
+            box-shadow: var(--shadow-md);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .blog-post:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translate(-2px, -2px);
+        }
+        
+        .blog-category {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            background-color: var(--accent-2);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-sm);
+            margin-bottom: var(--space-sm);
+            border: 2px solid var(--dark-petrol);
+        }
+        
+        .blog-title {
+            color: var(--dark-petrol);
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+        
+        .blog-meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text);
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+        }
+        
+        .blog-excerpt {
+            color: var(--text);
+            margin-bottom: var(--space-md);
+            line-height: 1.6;
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border: var(--border-sm);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+        
+        .newsletter-signup {
+            background-color: var(--dark-petrol);
+            border: var(--border-md);
+            box-shadow: var(--shadow-md);
+            padding: var(--space-xl);
+            text-align: center;
+            margin-top: var(--space-2xl);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: var(--space-sm);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: var(--space-md);
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: var(--space-sm);
+            border: var(--border-sm);
+            background-color: var(--secondary);
+            color: var(--dark-petrol);
+            font-family: var(--font-sans);
+        }
+        
+        .newsletter-input::placeholder {
+            color: var(--text);
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Bairytale</a>
+                <ul class="nav-menu">
+                    <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="ueber-mich.html" class="nav-link">Über mich</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Menu öffnen">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content" style="grid-template-columns: 1fr; text-align: center;">
+                <div class="hero-text">
+                    <h1>Blog | Gedanken, die treffen</h1>
+                    <p class="hero-subtitle">Klartext, Know-How und Kante</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="blog-filters">
+                <button class="filter-btn active">Alle</button>
+                <button class="filter-btn">Bildung & Brüche <span style="background: var(--accent); color: var(--primary); padding: 2px 6px; margin-left: 4px; font-size: 0.6rem;">5</span></button>
+            </div>
+
+            <!-- Featured Post -->
+            <article class="blog-post">
+                <div class="blog-category">Bildung & Brüche</div>
+                <div class="blog-image">📚</div>
+                <h2 class="blog-title">Das deutsche Bildungssystem: Zeit für eine Revolution statt Reparatur</h2>
+                <div class="blog-meta">Juli 20, 2025 • Lesezeit: 15 Min • Keine Kommentare</div>
+                <p class="blog-excerpt">Deutschland steht vor einer bildungspolitischen Zeitenwende. Während andere Nationen ihre Bildungssysteme grundlegend modernisieren und an die Anforderungen des 21. Jahrhunderts anpassen, verharrt die deutsche Bildungslandschaft in Strukturen, die ihre Wurzeln im 19. Jahrhundert haben...</p>
+                <a href="blog-post.html" class="btn">Weiterlesen</a>
+            </article>
+
+            <!-- Additional Blog Posts -->
+            <article class="blog-post">
+                <div class="blog-category">Bildung & Brüche</div>
+                <div class="blog-image">💡</div>
+                <h2 class="blog-title">Warum KI-Texte nie echte Kommunikation ersetzen werden</h2>
+                <div class="blog-meta">Juni 15, 2025 • Lesezeit: 8 Min • 3 Kommentare</div>
+                <p class="blog-excerpt">Künstliche Intelligenz kann vieles – aber kann sie auch authentisch kommunizieren? Ein kritischer Blick auf die Grenzen automatisierter Texterstellung und warum menschliche Kreativität unersetzlich bleibt...</p>
+                <a href="#" class="btn">Weiterlesen</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="blog-category">Bildung & Brüche</div>
+                <div class="blog-image">✍️</div>
+                <h2 class="blog-title">Die Macht der Worte: Wie Sprache Realität schafft</h2>
+                <div class="blog-meta">Mai 28, 2025 • Lesezeit: 12 Min • 7 Kommentare</div>
+                <p class="blog-excerpt">Sprache ist mehr als nur Kommunikation – sie formt unser Denken und unsere Wahrnehmung der Welt. Eine Analyse über die transformative Kraft bewusst gewählter Worte in Marketing, Politik und Alltag...</p>
+                <a href="#" class="btn">Weiterlesen</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="blog-category">Bildung & Brüche</div>
+                <div class="blog-image">🎯</div>
+                <h2 class="blog-title">Storytelling im B2B: Warum auch Unternehmen Geschichten brauchen</h2>
+                <div class="blog-meta">April 10, 2025 • Lesezeit: 10 Min • 12 Kommentare</div>
+                <p class="blog-excerpt">Geschichten verkaufen besser als Fakten – das gilt auch im B2B-Bereich. Wie Unternehmen durch authentisches Storytelling Vertrauen aufbauen und sich von der Konkurrenz abheben können...</p>
+                <a href="#" class="btn">Weiterlesen</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="blog-category">Bildung & Brüche</div>
+                <div class="blog-image">🚀</div>
+                <h2 class="blog-title">Content-Marketing jenseits von Buzzwords</h2>
+                <div class="blog-meta">März 22, 2025 • Lesezeit: 9 Min • 5 Kommentare</div>
+                <p class="blog-excerpt">Content-Marketing ist mehr als nur ein Buzzword – es ist die Kunst, relevante Inhalte zu schaffen, die echten Mehrwert bieten. Ein Leitfaden für authentisches Content-Marketing ohne Floskeln...</p>
+                <a href="#" class="btn">Weiterlesen</a>
+            </article>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-signup">
+                <h3 style="color: var(--accent); margin-bottom: var(--space-sm);">Kein Bullshit. Nur kluge Gedanken und Tools.</h3>
+                <p style="color: var(--text); margin-bottom: var(--space-md);">Erhalte regelmäßig neue Artikel und Insights direkt in dein Postfach.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Deine Mail Adresse für den Newsletter" required>
+                    <button type="submit" class="btn">Los geht's</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Beliebte Kategorien</h4>
+                    <ul>
+                        <li><a href="#">Bildung & Brüche</a></li>
+                        <li><a href="#">Storytelling</a></li>
+                        <li><a href="#">Content-Marketing</a></li>
+                        <li><a href="#">Kommunikation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>#Tags</h4>
+                    <ul>
+                        <li><a href="#">#Authentizität</a></li>
+                        <li><a href="#">#Storytelling</a></li>
+                        <li><a href="#">#Bildung</a></li>
+                        <li><a href="#">#KI-vs-Mensch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bairytale – Texte, die wirken. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
